@@ -135,7 +135,7 @@ typedef BOOL (^SyncWorkQueueBlockWithBoolReturnValue)(void);
 - (void)shutdown
 {
     if (_cppCommissioner == nullptr) {
-        // Already shut down.
+        [self cleanupAfterStartup];
         return;
     }
 
